@@ -217,7 +217,7 @@ void eval(char *cmdline)
 	    /* Now load and run the program in the new job */
 	    if (execve(argv[0], argv, environ) < 0) {
 		printf("%s: Command not found\n", argv[0]);
-		exit(0);
+		_exit(0);//Modify: use "exit(0) instead of exit(0)"
 	    }
 	}
 
